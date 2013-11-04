@@ -5,7 +5,7 @@
 .classpath
 .project
 .settings
-bin/.settings
+bin/*
 .eclipse
 */bin
 target
