@@ -82,7 +82,10 @@ public class Util
                     fos.write(n);
                 }
             } while (n != -1);
-            fos.flush();
+            fos.close();
+            fos = null;
+            is.close();
+            is = null;
             System.load(runtimeLibFile.getAbsolutePath());
         }
         finally
@@ -92,6 +95,7 @@ public class Util
                 try
                 {
                     fos.close();
+                    fos = null;
                 }
                 catch (IOException e)
                 {
@@ -102,6 +106,7 @@ public class Util
                 try
                 {
                     is.close();
+                    is = null;
                 }
                 catch (IOException e)
                 {
